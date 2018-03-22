@@ -1,0 +1,28 @@
+<div>
+<form #suspectForm (ngSubmit) ="onSubmit()"class= "form-container">
+  <mat-form-field><input matInput type ="text"  name="nom" placeholder="Nom" [(ngModel)]="suspect.nom"></mat-form-field>
+  <mat-form-field><input matInput type ="text"  name="prenom" placeholder="Prenom" [(ngModel)]="suspect.prenom"></mat-form-field>
+  <label>Genre: </label>
+ <mat-radio-group  name="genre" [(ngModel)]="suspect.genre">
+    <mat-radio-button value="M">Homme</mat-radio-button>
+    <mat-radio-button value="F">Femme</mat-radio-button>
+  </mat-radio-group>
+  <label>Date de Naissance</label>
+  <mat-form-field><input matInput type="date" name="dateNaissance"[(ngModel)]="suspect.dateNaissance"></mat-form-field>
+<mat-form-field><input matInput type ="text" name="nationalite" placeholder="Nationalité" [(ngModel)]="suspect.nationalite"></mat-form-field>
+<mat-form-field><input matInput type ="number" name="taille" placeholder="Taille"[(ngModel)]="suspect.taille"></mat-form-field>
+<mat-form-field><input matInput type ="number" name="poids" placeholder="Poids" [(ngModel)]="suspect.poids"></mat-form-field>
+<mat-form-field><input matInput type ="text"  name="nom" placeholder="Adresse" [(ngModel)]="suspect.adresseConnues"></mat-form-field>
+  <mat-form-field><input matInput type ="text" name="signeDistinctif" placeholder="Signe distinctif" [(ngModel)]="suspect.signeDistinctif"></mat-form-field>
+  <mat-form-field><input matInput type ="text" name="photo" placeholder="Photo" [(ngModel)]="suspect.photo"></mat-form-field>
+  <mat-form-field><input matInput type ="text" name="empreinte" placeholder="Empreinte" [(ngModel)]="suspect.empreinte"></mat-form-field>
+  <label>Le Suspect a un casier : </label>
+<mat-radio-group name="casierJudiciaire" [(ngModel)]="suspect.casierJudiciaire">
+  <mat-radio-button value="true">Oui</mat-radio-button>
+  <mat-radio-button value="false">non</mat-radio-button>
+</mat-radio-group>
+<mat-form-field><input matInput type ="number" name="condamnations" placeholder="Nombre de condamnations" [(ngModel)]="suspect.condamnations"></mat-form-field>  
+<mat-form-field><input matInput type ="text" name="typeCondamnation" placeholder="Type de condamantion" [(ngModel)]="suspect.typeCondamnation"></mat-form-field>
+  <button mat-raised-button type="submit" routerLink="/suspect/{id}">Suivant</button>
+</form>
+</div>

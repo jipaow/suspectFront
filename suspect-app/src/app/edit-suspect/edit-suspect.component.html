@@ -1,0 +1,30 @@
+<mat-card class="suspect-card" *ngIf = "suspect">
+  <mat-card-header>
+    <mat-card-title>{{suspect.nom}}</mat-card-title>
+    <mat-card-subtitle>Numero d'identification:{{suspect.id}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image  src="{{suspect.photo}}" alt="Photo of {{suspect.nom}}">
+  <mat-card-content>
+    <p><strong>Prenom :</strong>{{suspect.prenom}}</p>
+    <p><strong>Genre : </strong>{{suspect.genre}}</p>
+    <p><Strong>Date de Naissance :</Strong>{{suspect.dateNaissance}}</p>
+    <p><Strong>Nationalité :</Strong>{{suspect.nationalite}}</p>
+    <p><Strong>Taille :</Strong> {{suspect.taille}}m</p>
+    <p><Strong>Poids:</Strong> {{suspect.poids}}kgs</p>
+    <p><Strong>Adresse Connues:</Strong> {{suspect.adresseConnues}}</p>
+    <p><Strong>Signes distinctifs :</Strong> {{suspect.signeDistinctif}}</p>
+    <p><Strong>Empreintes:</Strong> {{suspect.empreinte}}</p>
+    <p *ngIf="suspect.casierJudiciaire; else noCasier"><Strong>Casier Judiciare:</Strong> Oui</p>
+    <ng-template #noCasier><p><Strong>Casier Judiciare:</Strong> pas de casier judiciaire</p></ng-template>
+    <!-- <p *ngIf="!suspect.casierJudiciaire"><Strong>Casier Judiciare:</Strong> pas de casier judiciaire</p> -->
+    <p><Strong>Nombres de Condamnations :</Strong> {{suspect.condamnations}}</p>
+    <p><Strong>Type de Condamnations :</Strong> {{suspect.typeCondamnation}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-icon-button routerLink="update"><mat-icon>edit</mat-icon></a>
+    <button mat-button>Archiver</button>
+    <button mat-button>Lier à une affaire</button>
+  </mat-card-actions>
+</mat-card>
+<router-outlet></router-outlet>
+

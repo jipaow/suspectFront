@@ -1,0 +1,16 @@
+<div>
+  <h3> Liste de suspects</h3>
+  <div class=table>
+      <div class="table-row" *ngFor=" let suspect of suspects ">
+          <div class="table-cell">{{suspect.id}}</div>
+          <div class="table-cell">{{suspect.nom}}</div>
+          <div class="table-cell">{{suspect.prenom}}</div>
+          <div class="table-cell button-cell"><button routerLink="/editSuspect/{{suspect.id}}">Consulter</button></div>
+        </div>
+  </div>
+  <button routerLink="/formSuspect/">Créer un nouveau suspect</button>
+</div>
+
+
+
+
