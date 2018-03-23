@@ -22,7 +22,20 @@
     <mat-radio-button value="false">non</mat-radio-button>
   </mat-radio-group>
   <mat-form-field><input matInput type ="number" name="condamnations" placeholder="Nombre de condamnations" [(ngModel)]="suspect.condamnations"></mat-form-field>  
-  <mat-form-field><input matInput type ="text" name="typeCondamnation" placeholder="Type de condamantion" [(ngModel)]="suspect.typeCondamnation"></mat-form-field>
+  <mat-form-field><mat-select  type="text" name="typeCondamnation" placeholder="Type de condamnations" [(ngModel)]="suspect.typeCondamnation">
+    <mat-option value="Homicide">Homicide</mat-option>
+    <mat-option value="Tentative de meurtre">Tentative de meurtre</mat-option>
+    <mat-option value="Vol qualifié">Vol qualifié</mat-option>
+    <mat-option value="voies de fait graves">Voies de fait graves</mat-option>
+    <mat-option value="Menaces">Menaces</mat-option>
+    <mat-option value="Harcelement">Harcelement</mat-option>
+    <mat-option value="Fraude">fraude</mat-option>
+    <mat-option value="Defaut de comparaitre">Défaut de comparaître</mat-option>
+    <mat-option value="Infractions relative aux armes">infractions relative aux armes</mat-option>
+    <mat-option value="Prostitution">Prostitution</mat-option>
+    <mat-option value="Possession de drogue">Possession de drogue</mat-option>
+    <mat-option value="trafic de drogues">Trafic de drogues</mat-option>
+  </mat-select></mat-form-field>
     <button mat-raised-button type="submit">Mettre à jour</button>
   </form>
   </div>

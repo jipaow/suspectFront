@@ -1,5 +1,5 @@
 import {MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, MatRadioModule,
- MatDatepickerModule, MatNativeDateModule, MatIconModule} from '@angular/material';
+ MatDatepickerModule, MatNativeDateModule, MatIconModule, MatTableDataSource, MatTableModule} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { LinkSuspectComponent } from './link-suspect/link-suspect.component';
 import { UpdateSuspectComponent } from './update-suspect/update-suspect.component';
+import { EnqueteComponent } from './enquete/enquete.component';
 
 
 
@@ -30,6 +31,7 @@ import { UpdateSuspectComponent } from './update-suspect/update-suspect.componen
     FormSuspectComponent,
     LinkSuspectComponent,
     UpdateSuspectComponent,
+    EnqueteComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -45,7 +47,8 @@ import { UpdateSuspectComponent } from './update-suspect/update-suspect.componen
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule
   ],
   exports: [
     MatCardModule,

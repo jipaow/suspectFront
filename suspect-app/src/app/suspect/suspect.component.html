@@ -1,14 +1,41 @@
 <div>
   <h3> Liste de suspects</h3>
-  <div class=table>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  <!-- <div class=table>
       <div class="table-row" *ngFor=" let suspect of suspects ">
           <div class="table-cell">{{suspect.id}}</div>
           <div class="table-cell">{{suspect.nom}}</div>
           <div class="table-cell">{{suspect.prenom}}</div>
           <div class="table-cell button-cell"><button routerLink="/editSuspect/{{suspect.id}}">Consulter</button></div>
         </div>
-  </div>
-  <button routerLink="/formSuspect/">Créer un nouveau suspect</button>
+  </div> -->
+<mat-table #suspectTable [dataSource]="suspects">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="numero">
+    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+    <mat-cell *matCellDef="let suspect">{{suspect.id}}</mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="nom">
+    <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
+    <mat-cell *matCellDef="let suspect"> <a href="/editSuspect/{{suspect.id}}">{{suspect.nom}}</a> </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="prenom">
+    <mat-header-cell *matHeaderCellDef> Prénom </mat-header-cell>
+    <mat-cell *matCellDef="let suspect"> <a href="/editSuspect/{{suspect.id}}">{{suspect.prenom}}</a> </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+
+<button routerLink="/formSuspect/">Créer un nouveau suspect</button>
 </div>
 
 

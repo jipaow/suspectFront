@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 
 import 'rxjs/add/operator/do';
+import { NgForm } from '@angular/forms';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})

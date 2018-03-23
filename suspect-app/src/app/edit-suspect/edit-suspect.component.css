@@ -1,6 +1,8 @@
 .suspect-card{
     max-width: 75%;
-    transform: translate(200px);
+    display:flex;
+    flex-direction: column;
+
 }
 .mat-card-image{
    max-height: 400px;
