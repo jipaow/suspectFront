@@ -1,8 +1,13 @@
-.updateContainer{
-        display: flex;
-        flex-direction: column;
-      }
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin:20px;
+}
+
+.form-container > * {
+  width: 100%;
+}
+.mat-card{
+margin: 20px;
+}
       
-      .form-container > * {
-        width: 100%;
-      }

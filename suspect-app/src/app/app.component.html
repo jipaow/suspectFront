@@ -1,8 +1,17 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<h1>{{title}}</h1>
 
-<nav>
-  <a routerLink="/suspects">Liste des Suspects</a>
-</nav>
+<button mat-raised-button [matMenuTriggerFor]="menu">
+  Navigation
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/suspects">
+    <mat-icon>fingerprint</mat-icon>
+    <span>Liste des suspects</span>
+  </button>
+  <button mat-menu-item routerLink="">
+    <mat-icon>description</mat-icon>
+    <span>Liste des enquêtes</span>
+  </button>
+</mat-menu>
+
 <router-outlet></router-outlet>
 

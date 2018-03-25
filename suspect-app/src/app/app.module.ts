@@ -1,5 +1,5 @@
 import {MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, MatRadioModule,
- MatDatepickerModule, MatNativeDateModule, MatIconModule, MatTableDataSource, MatTableModule} from '@angular/material';
+ MatDatepickerModule, MatNativeDateModule, MatIconModule, MatTableDataSource, MatTableModule, MatMenuModule} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -48,7 +48,8 @@ import { EnqueteComponent } from './enquete/enquete.component';
     MatNativeDateModule,
     FormsModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatMenuModule,
   ],
   exports: [
     MatCardModule,

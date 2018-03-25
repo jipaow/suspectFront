@@ -1,41 +1,67 @@
-<div class= updateContainer *ngIf="suspect">
-  <form #upDateForm (ngSubmit)="onSubmit(upDateForm)"class= "form-container">
-    <mat-form-field><input matInput type ="text"  name="nom" placeholder="Nom" [(ngModel)]="suspect.nom"></mat-form-field>
-    <mat-form-field><input matInput type ="text"  name="prenom" placeholder="Prenom" [(ngModel)]="suspect.prenom"></mat-form-field>
-    <label>Genre: </label>
-   <mat-radio-group  name="genre" [(ngModel)]="suspect.genre">
-      <mat-radio-button value="M" >Homme</mat-radio-button>
-      <mat-radio-button value="F">Femme</mat-radio-button>
-    </mat-radio-group>
-    <label>Date de Naissance</label>
-    <mat-form-field><input matInput type="date" name="dateNaissance"[(ngModel)]="suspect.dateNaissance"></mat-form-field>
-  <mat-form-field><input matInput type ="text" name="nationalite" placeholder="Nationalité" [(ngModel)]="suspect.nationalite"></mat-form-field>
-  <mat-form-field><input matInput type ="number" name="taille" placeholder="Taille"[(ngModel)]="suspect.taille"></mat-form-field>
-  <mat-form-field><input matInput type ="number" name="poids" placeholder="Poids" [(ngModel)]="suspect.poids"></mat-form-field>
-  <mat-form-field><input matInput type ="text"  name="adresseConnues" placeholder="Adresse" [(ngModel)]="suspect.adresseConnues"></mat-form-field>
-    <mat-form-field><input matInput type ="text" name="signeDistinctif" placeholder="Signe distinctif" [(ngModel)]="suspect.signeDistinctif"></mat-form-field>
-    <mat-form-field><input matInput type ="text" name="photo" placeholder="Photo" [(ngModel)]="suspect.photo"></mat-form-field>
-    <mat-form-field><input matInput type ="text" name="empreinte" placeholder="Empreinte" [(ngModel)]="suspect.empreinte"></mat-form-field>
-    <label>Le Suspect a un casier : </label>
-  <mat-radio-group name="casierJudiciaire" [(ngModel)]="suspect.casierJudiciaire">
-    <mat-radio-button value="true">Oui</mat-radio-button>
-    <mat-radio-button value="false">non</mat-radio-button>
-  </mat-radio-group>
-  <mat-form-field><input matInput type ="number" name="condamnations" placeholder="Nombre de condamnations" [(ngModel)]="suspect.condamnations"></mat-form-field>  
-  <mat-form-field><mat-select  type="text" name="typeCondamnation" placeholder="Type de condamnations" [(ngModel)]="suspect.typeCondamnation">
-    <mat-option value="Homicide">Homicide</mat-option>
-    <mat-option value="Tentative de meurtre">Tentative de meurtre</mat-option>
-    <mat-option value="Vol qualifié">Vol qualifié</mat-option>
-    <mat-option value="voies de fait graves">Voies de fait graves</mat-option>
-    <mat-option value="Menaces">Menaces</mat-option>
-    <mat-option value="Harcelement">Harcelement</mat-option>
-    <mat-option value="Fraude">fraude</mat-option>
-    <mat-option value="Defaut de comparaitre">Défaut de comparaître</mat-option>
-    <mat-option value="Infractions relative aux armes">infractions relative aux armes</mat-option>
-    <mat-option value="Prostitution">Prostitution</mat-option>
-    <mat-option value="Possession de drogue">Possession de drogue</mat-option>
-    <mat-option value="trafic de drogues">Trafic de drogues</mat-option>
-  </mat-select></mat-form-field>
-    <button mat-raised-button type="submit">Mettre à jour</button>
-  </form>
-  </div>
+<mat-card *ngIf="suspect">
+    <form #upDateForm (ngSubmit)="onSubmit(upDateForm)" class="form-container">
+        <mat-form-field>
+          <input matInput type="text" name="nom" placeholder="Nom" [(ngModel)]="suspect.nom">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" name="prenom" placeholder="Prenom" [(ngModel)]="suspect.prenom">
+        </mat-form-field>
+        <label>Genre: </label>
+        <mat-radio-group name="genre" [(ngModel)]="suspect.genre">
+          <mat-radio-button value="M">Homme</mat-radio-button>
+          <mat-radio-button value="F">Femme</mat-radio-button>
+        </mat-radio-group>
+        <label>Date de Naissance</label>
+        <mat-form-field>
+          <input matInput type="date" name="dateNaissance" [(ngModel)]="suspect.dateNaissance">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" name="nationalite" placeholder="Nationalité" [(ngModel)]="suspect.nationalite">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="number" name="taille" placeholder="Taille" [(ngModel)]="suspect.taille" >
+          <mat-hint align="end"> Entrez un chiffre de type "0.00"</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="number" name="poids" placeholder="Poids" [(ngModel)]="suspect.poids">
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput type="text" name="adresseConnues" placeholder="Adresse" [(ngModel)]="suspect.adresseConnues"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput type="text" name="signeDistinctif" placeholder="Signe distinctif" [(ngModel)]="suspect.signeDistinctif"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" name="photo" placeholder="Photo" [(ngModel)]="suspect.photo">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" name="empreinte" placeholder="Empreinte" [(ngModel)]="suspect.empreinte">
+        </mat-form-field>
+        <label>Le Suspect a un casier : </label>
+        <mat-radio-group name="casierJudiciaire" [(ngModel)]="suspect.casierJudiciaire">
+          <mat-radio-button value="true">Oui</mat-radio-button>
+          <mat-radio-button value="false">non</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field>
+          <input matInput type="number" name="condamnations" placeholder="Nombre de condamnations" [(ngModel)]="suspect.condamnations">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select type="text" name="typeCondamnation" placeholder="Type de condamnations" [(ngModel)]="suspect.typeCondamnation">
+            <mat-option value="Homicide">Homicide</mat-option>
+            <mat-option value="Tentative de meurtre">Tentative de meurtre</mat-option>
+            <mat-option value="Vol qualifié">Vol qualifié</mat-option>
+            <mat-option value="voies de fait graves">Voies de fait graves</mat-option>
+            <mat-option value="Menaces">Menaces</mat-option>
+            <mat-option value="Harcelement">Harcelement</mat-option>
+            <mat-option value="Fraude">fraude</mat-option>
+            <mat-option value="Defaut de comparaitre">Défaut de comparaître</mat-option>
+            <mat-option value="Infractions relative aux armes">infractions relative aux armes</mat-option>
+            <mat-option value="Prostitution">Prostitution</mat-option>
+            <mat-option value="Possession de drogue">Possession de drogue</mat-option>
+            <mat-option value="trafic de drogues">Trafic de drogues</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button type="submit">Mettre à jour</button>
+      </form>
+</mat-card>
+ 

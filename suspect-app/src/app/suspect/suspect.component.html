@@ -1,18 +1,15 @@
 <div>
-  <h3> Liste de suspects</h3>
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
-  <!-- <div class=table>
-      <div class="table-row" *ngFor=" let suspect of suspects ">
-          <div class="table-cell">{{suspect.id}}</div>
-          <div class="table-cell">{{suspect.nom}}</div>
-          <div class="table-cell">{{suspect.prenom}}</div>
-          <div class="table-cell button-cell"><button routerLink="/editSuspect/{{suspect.id}}">Consulter</button></div>
-        </div>
-  </div> -->
+  <mat-card>
+    <mat-card-content>
+        <h3> Liste de suspects</h3>
+        <hr>
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+ 
 <mat-table #suspectTable [dataSource]="suspects">
-
   <!-- Position Column -->
   <ng-container matColumnDef="numero">
     <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
@@ -34,8 +31,9 @@
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
 </mat-table>
-
-<button routerLink="/formSuspect/">Créer un nouveau suspect</button>
+</div>
+<div class="buttonCreate">
+    <button  mat-raised-button routerLink="/formSuspect/">Créer un nouveau suspect</button>
 </div>
 
 

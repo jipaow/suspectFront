@@ -1,3 +1,5 @@
 .table{display: table}
 .table-row{display: table-row}
 .table-cell{display: table-cell; min-width: 120px;border:solid 1px black}
+.mat-card{margin-top: 20px; margin-bottom: 10px}
+.buttonCreate{margin:20px}
