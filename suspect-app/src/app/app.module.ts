@@ -2,9 +2,6 @@ import {MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, Ma
  MatDatepickerModule, MatNativeDateModule, MatIconModule, MatTableDataSource, MatTableModule, MatMenuModule} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
-
 import { AppComponent } from './app.component';
 import { SuspectComponent } from './suspect/suspect.component';
 import { SuspectService } from './suspect.service';
@@ -18,6 +15,10 @@ import { FormsModule } from '@angular/forms';
 import { LinkSuspectComponent } from './link-suspect/link-suspect.component';
 import { UpdateSuspectComponent } from './update-suspect/update-suspect.component';
 import { EnqueteComponent } from './enquete/enquete.component';
+import { AllEnqueteComponent } from './all-enquete/all-enquete.component';
+import { GetEnqueteComponent } from './get-enquete/get-enquete.component';
+import { UpdateEnqueteComponent } from './update-enquete/update-enquete.component';
+import { CreateEnqueteComponent } from './create-enquete/create-enquete.component';
 
 
 
@@ -32,6 +33,10 @@ import { EnqueteComponent } from './enquete/enquete.component';
     LinkSuspectComponent,
     UpdateSuspectComponent,
     EnqueteComponent,
+    AllEnqueteComponent,
+    GetEnqueteComponent,
+    UpdateEnqueteComponent,
+    CreateEnqueteComponent,
   ],
   imports: [
     BrowserAnimationsModule,

@@ -1,0 +1,12 @@
+<div>
+  <h3> Liste des enquêtes</h3>
+  <div class=table>
+      <div class="table-row" *ngFor=" let enquete of enquetes">
+          <div class="table-cell">{{enquete.numeroDossier}}</div>
+          <div class="table-cell">{{enquete.nom}}</div>
+          <div class="table-cell">{{enquete.categorie}}</div>
+          <div class="table-cell button-cell"><button routerLink="/enquete/{{enquete.numeroDossier}}">Consulter</button></div>
+        </div>
+  </div>
+  <button routerLink="/creerEnquete">Créer un nouvelle enquête</button>
+</div>

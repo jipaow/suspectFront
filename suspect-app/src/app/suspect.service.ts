@@ -17,6 +17,7 @@ export class SuspectService {
 
   private allSuspectUrl = 'http://localhost:8080/csi/suspects';
   private oneSuspectUrl = 'http://localhost:8080/csi/suspect';
+  private linkSuspectUrl = 'http://localhost:8080/csi/suspect/link';
 
   constructor(private http: HttpClient) { }
 
@@ -44,4 +45,8 @@ export class SuspectService {
     return this.http.post<Suspect>(OneSuspectUrl, suspect, httpOptions);
   }
 
+  linkSuspect(suspect: Suspect): Observable<Suspect> {
+    const LinkSuspectUrl =  `${this.linkSuspectUrl}`;
+    return this.http.post<Suspect>(LinkSuspectUrl, suspect, httpOptions);
+  }
 }

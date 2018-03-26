@@ -1,3 +1,7 @@
-<p>
-  link-suspect works!
-</p>
+<div>
+  <form #linkForm (ngSubmit) ="onSubmit()"class= "form-container">
+    <mat-form-field><input matInput type ="int"  name="id" placeholder="Id Suspect" [(ngModel)]="suspect.id"></mat-form-field>
+    <mat-form-field><input matInput type ="int"  name="numEnquete" placeholder="Id Enquete" [(ngModel)]="suspect.numEnquete"></mat-form-field>
+    <button mat-raised-button type="submit">Valider</button>
+  </form>
+  </div>

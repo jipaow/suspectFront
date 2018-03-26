@@ -14,4 +14,5 @@ export class Suspect {
     casierJudiciaire: boolean;
     condamnations: number;
     typeCondamnation: string;
+    numEnquete: number;
 }

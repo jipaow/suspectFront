@@ -1,0 +1,16 @@
+<div class= updateContainer *ngIf="enquete">
+  <form #upDateForm (ngSubmit)="onSubmit(upDateForm)"class= "form-container">
+    <mat-form-field><input matInput type ="text"  name="nom" placeholder="Nom" [(ngModel)]="enquete.nom"></mat-form-field>
+    <mat-form-field><input matInput type ="text"  name="categorie" placeholder="Categorie" [(ngModel)]="enquete.categorie"></mat-form-field>
+    <label>Date de Création</label>
+    <mat-form-field><input matInput type="date" name="dateCreation"[(ngModel)]="enquete.dateCreation"></mat-form-field>
+  <mat-form-field><input matInput type ="text" name="localisation" placeholder="Localisation" [(ngModel)]="enquete.localisation"></mat-form-field>
+  <mat-form-field><input matInput type ="number" name="statut" placeholder="Statut"[(ngModel)]="enquete.statut"></mat-form-field>
+    <label>L'affaire est classée : </label>
+  <mat-radio-group name="classee" [(ngModel)]="enquete.classee">
+    <mat-radio-button value="true">Oui</mat-radio-button>
+    <mat-radio-button value="false">non</mat-radio-button>
+  </mat-radio-group>
+    <button mat-raised-button type="submit">Mettre à jour</button>
+  </form>
+  </div>
